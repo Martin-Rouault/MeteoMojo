@@ -1,3 +1,5 @@
+import { WEATHER_API_KEY, WEATHER_API_URL } from "../API/api";
+import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import Search from "./components/Search/Search";
 import { useState } from "react";
 
@@ -31,7 +33,7 @@ const App = () => {
       <div className="mx-auto my-4 max-w-xl">
         <div className="flex flex-col items-center justify-center rounded-2xl bg-[#1A191B] p-6 shadow-lg">
           <Search onSearchChange={handleOnSearchChange} />
-          {/* {currentWeather && <CurrentWeather data={currentWeather} />} */}
+          {currentWeather && <CurrentWeather data={currentWeather} />}
           {/* {forecastWeather && <ForecastWeather data={forecastWeather} />} */}
         </div>
         <h1 className="mt-4 flex justify-center bg-gradient-to-t from-[#262626] to-[#a3a3a3] bg-clip-text text-2xl font-semibold text-transparent">

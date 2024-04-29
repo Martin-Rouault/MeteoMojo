@@ -29,13 +29,43 @@ const Search = ({ onSearchChange }) => {
     onSearchChange(searchData);
   };
 
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      width: "250px",
+      backgroundColor: "#1A191B",
+      borderRadius: "10px",
+      color: "#EEEEF0",
+      marginBottom: "15px",
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isFocused ? "#1A191B" : "#121113",
+      color: state.isFocused ? "#EEEEF0" : "#B5B2BC",
+    }),
+    menu: (provided) => ({
+      ...provided,
+      backgroundColor: "#1A191B",
+      borderRadius: "10px",
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: "#EEEEF0",
+    }),
+    input: (provided) => ({
+      ...provided,
+      color: "#EEEEF0",
+    }),
+  };
+
   return (
     <AsyncPaginate
-      placeholder="Search for city"
+      placeholder="Rechercher une ville"
       debounceTimeout={600}
       value={search}
       onChange={handleOnChange}
       loadOptions={loadOptions}
+      styles={customStyles}
     />
   );
 };
